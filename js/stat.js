@@ -5,11 +5,8 @@ var CLOUD_HEIGHT = 270;
 var CLOUD_X = 100;
 var CLOUD_Y = 10;
 var GAP = 10;
-var FONT_GAP = 15;
-var TEXT_WIDTH = 50;
 var TEXT_HEIGHT = 16;
 var BAR_HEIGHT = 40;
-var barHeight = CLOUD_HEIGHT - 5 * GAP - TEXT_HEIGHT - 5 * GAP;
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -50,7 +47,7 @@ window.renderStatistics = function (ctx, players, times) {
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = `rgba(0, 0, 255, ${Math.random()})`;
+      ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
     }
     ctx.fillRect(CLOUD_X + 5 * GAP + (CLOUD_X / 2 + BAR_HEIGHT) * i, CLOUD_HEIGHT - TEXT_HEIGHT - 2 * GAP, BAR_HEIGHT, -(150 * times[i]) / maxTime);
 
